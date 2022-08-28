@@ -22,7 +22,6 @@ const urlGuest = 'https://api.themoviedb.org/3/authentication/guest_session/new?
     .then((res) => res.json())
     .then((data) => {
     dispatch(setGuestSession(data.guest_session_id))
-    console.log(data);
 })
 .catch((error) => {
               console.log(error);

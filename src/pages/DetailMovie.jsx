@@ -25,7 +25,6 @@ const { id } = useParams();
 
     const backgroundMovies = () => {
       if(data.backdrop_path === null) {
-              console.log(data.backdrop_path)
         return 'h-8 md:h-[500px] xl:h-[600px] opacity-95 md:opacity-75'
       } else {
       return 'h-56 md:h-[430px] xl:h-[480px] opacity-95 md:opacity-75'

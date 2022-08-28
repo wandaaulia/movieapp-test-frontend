@@ -8,8 +8,6 @@ const Search = () => {
 
   const [findMovies, setFindMovies] = useState('');
 
-  console.log(findMovies);
-
   return (
     <div className='flex flex-col min-h-screen' style={{   backgroundColor: '#201F1F' }}> 
       <Navbar />
