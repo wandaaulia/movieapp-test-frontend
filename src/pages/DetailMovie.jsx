@@ -1,12 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { useQuery, useMutation} from 'react-query';
-import { useNavigate, useParams } from "react-router-dom";
-import { AiFillStar } from "react-icons/ai";
-import { useDispatch, useSelector } from 'react-redux'
-import { setGuestRating, unsetGuestRating } from '../features/movieSlice';
+import React from 'react'
+import { useQuery} from 'react-query';
+import {  useParams } from "react-router-dom";
 import Navbar from '../component/Navbar';
 import ButtonRating from '../component/ButtonRating';
-import MoviePopular from '../component/MoviePopular';
 import LoadingApi from '../component/LoadingApi';
 
 const getDetailMovie = async (id) => {
@@ -48,7 +44,7 @@ const { id } = useParams();
             {
               data.backdrop_path &&  (
                 <> 
- <img className="w-full h-full object-cover object-top z-0" src={`${Base_URLDetail}/w1280/${data.backdrop_path}`}  />
+ <img alt="img" className="w-full h-full object-cover object-top z-0" src={`${Base_URLDetail}/w1280/${data.backdrop_path}`}  />
               </>
               ) 
             }

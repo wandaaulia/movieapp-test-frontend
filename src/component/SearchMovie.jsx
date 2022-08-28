@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import { useQuery} from 'react-query';
-import { useNavigate } from "react-router-dom";
 import LoadingApi from './LoadingApi';
 import MovieList from './MovieList';
 

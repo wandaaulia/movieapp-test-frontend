@@ -24,7 +24,7 @@ export const movieSlice = createSlice({
      });
     },
      unsetGuestRating : (state, action) => {
-     state.guestRating = state.guestRating.filter((item) => item.id != action.payload);
+     state.guestRating = state.guestRating.filter((item) => item.id !== action.payload);
     },
   },
 })

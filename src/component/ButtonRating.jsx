@@ -23,6 +23,7 @@ let findGuestRate = guest_Rating.filter(item => {
   );
 
 let findRate = findGuestRate.find(item => 
+  // eslint-disable-next-line eqeqeq
   item.movieId == id
   );
 
