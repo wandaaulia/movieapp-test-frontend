@@ -32,7 +32,7 @@ const { id } = useParams();
       }
     }
   return (
-     <div className='pb-8 min-h-screen' style={{   backgroundColor: '#201F1F' }}>
+     <div className='pb-8 min-h-screen relative' style={{   backgroundColor: '#201F1F' }}>
          <Navbar />
  {
        isLoading ? (

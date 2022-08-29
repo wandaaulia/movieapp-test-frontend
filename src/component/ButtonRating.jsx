@@ -48,13 +48,21 @@ let findRate = findGuestRate.find(item =>
 
 
     const rateMovies = (val) => {
-        setRating(val);
+        if(loading) {
+            return;
+        }  else {
+             setRating(val);
+        }
     }
  
 
 
 
 const handleClick = (guestId, movieId, rate) => {
+   if(loading) {
+      setMessage('Pemberian rating sedang diproses ...');
+      return;
+   }
     if(rating <= 0.5) {
         setMessage('Berikan rating terlebih dahulu');
         return;
@@ -91,11 +99,13 @@ const handleClick = (guestId, movieId, rate) => {
       }
 
   const handleCancelRating = (findRateId, movieId) => {
+    if(loading) {
+      setMessage('pembatalan rating sedang diproses ...');
+          return;
+   }
      if(findRate) {
     setLoading(true);
-
       const url2 = `https://api.themoviedb.org/3/movie/${movieId}/rating?guest_session_id=${guest_session}&api_key=bce0e8ef1edce22d33a2def9e94c5113`;
-
         fetch(url2, {
           method: 'DELETE',
           body: JSON.stringify({
@@ -141,7 +151,7 @@ const handleClick = (guestId, movieId, rate) => {
                 findRate ? 
               <div onClick={() => handleCancelRating(findRate.id, id)} className='mx-auto w-36 text-center cursor-pointer mt-4 md:mr-4 md:ml-0 bg-gray-700 rounded-md px-4 py-2 text-white '> Cancel Rating </div> 
               : 
-              <div onClick={() => handleClick(guest_session, id, rating)} className='mx-auto  w-36 text-center cursor-pointer mt-4 md:mr-4 md:ml-0 bg-red-500 rounded-md px-4 py-2 text-white '> Send Rating </div>
+              <div onClick={() => handleClick(guest_session, id, rating)}  className='mx-auto  w-36 text-center cursor-pointer mt-4 md:mr-4 md:ml-0 bg-red-500 rounded-md px-4 py-2 text-white '> Send Rating </div>
                }
                   
                {

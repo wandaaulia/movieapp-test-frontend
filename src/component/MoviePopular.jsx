@@ -30,7 +30,9 @@ const MoviePopular = () => {
     <div className='flex flex-wrap pl-2 pr-3 justify-start' >
  {
        isLoading ? (
+         <div className='flex w-full object-cover object-center justify-center items-center'>  
         <LoadingApi />
+        </div>
       ) : isSuccess ? (
   arr.map((item, index) => 
            <MoviePopularList key={index} id={item.id} poster_path={item.poster_path} title={item.original_title} />
